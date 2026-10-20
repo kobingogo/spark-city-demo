@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>Spark City Demo · 3D Gaussian Splatting</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ccircle cx=%278%27 cy=%278%27 r=%277%27 fill=%27%2360a5fa%27/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+
+    <header class="bar">
+      <div class="brand">Spark City Demo <span>3DGS · three.js + Spark</span></div>
+      <div class="bar-right">
+        <nav id="scenes" class="scenes" aria-label="场景切换"></nav>
+        <button id="mode-toggle" class="mode-toggle" type="button">漫游中 · 切到环绕</button>
+      </div>
+    </header>
+
+    <div id="loader" class="loader" hidden>
+      <div class="loader-title" id="loader-title">加载中…</div>
+      <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="loader-sub" id="loader-sub">0%</div>
+    </div>
+
+    <div id="error" class="error" hidden></div>
+
+    <div id="hint" class="hint-box" data-open="true">
+      <span id="hint-text"></span>
+      <button id="hint-close" class="hint-close" type="button">收起</button>
+    </div>
+    <div id="joystick" class="joystick" hidden aria-label="移动摇杆"><div class="joy-knob"></div></div>
+    <div id="toast" class="toast" hidden></div>
+
+    <div id="copy" class="copy">
+      <button id="copy-btn" class="copy-btn" type="button" aria-expanded="false" aria-controls="copy-pop" aria-label="当前场景署名与许可">©</button>
+      <div id="copy-pop" class="copy-pop" role="dialog" aria-label="当前场景署名" hidden></div>
+    </div>
+
+    <footer class="info">
+      <button id="info-toggle" class="info-toggle" aria-expanded="false">数据来源与许可</button>
+      <div id="info-panel" class="info-panel" hidden></div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
